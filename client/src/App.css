@@ -1,0 +1,51 @@
+.app-background {
+  width: 100%;
+  min-height: 100vh;
+  background: none; /* removed color gradient to use background image only */
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.app-background::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("./assets/bgImage.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 1; /* show image without color overlay */
+  z-index: -1;
+}
+
+/* Custom Bootstrap overrides for better chat styling */
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.form-control:focus {
+  border-color: #6f42c1;
+  box-shadow: 0 0 0 0.2rem rgba(111, 66, 193, 0.25);
+}
+
+.btn-primary {
+  background: linear-gradient(45deg, #6f42c1, #8b5cf6);
+  border: none;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(45deg, #5a2d91, #7c3aed);
+  transform: translateY(-1px);
+}
+
+/* Glassmorphism effects */
+.glass-effect {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}

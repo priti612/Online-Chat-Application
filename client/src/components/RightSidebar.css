@@ -1,0 +1,243 @@
+/* keep profile avatar visually reasonable */
+
+/* keep profile avatar visually reasonable */
+.profile-image {
+  width: 72px;        /* ⬅ smaller */
+  height: 72px;       /* ⬅ smaller */
+  border-radius: 50%;
+  object-fit: cover;
+  box-sizing: border-box;
+  border: 2px solid rgba(139, 92, 246, 0.3);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+
+
+.chat-container {
+  overflow: visible; /* was overflow: hidden; */
+  min-height: 0;
+}/* Compact header + avoid clipping */
+.chat-header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  height: 56px;               /* ⬅ slightly taller */
+  box-sizing: border-box;
+  background: rgba(2, 6, 23, 0.95);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  backdrop-filter: blur(8px);
+}
+
+/* smaller avatar inside header */
+/* smaller avatar inside chat header */
+.chat-header img {
+  width: 32px;          /* ⬅ reduced */
+  height: 32px;
+  min-width: 32px;
+  min-height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-sizing: border-box;
+}
+
+.chat-container {
+  position: relative;
+  overflow: hidden;  /* ⬅ IMPORTANT: back to hidden */
+  min-height: 0;
+}
+.profile-section .profile-image {
+  width: 80px;
+  height: 80px;
+}
+
+/* make username truncate instead of being cut off */
+.chat-user {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.chat-user span {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: block;
+  font-size: 0.95rem;
+}.right-sidebar {
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.6);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  overflow-y: auto;
+}
+
+/* ===== Profile Section ===== */
+.profile-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 16px;
+  text-align: center;
+  gap: 16px;
+}
+
+.profile-image {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(139, 92, 246, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.profile-name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+}
+
+.online-indicator {
+  width: 10px;
+  height: 10px;
+  background: #22c55e;
+  border-radius: 50%;
+  border: 2px solid rgba(15, 23, 42, 0.8);
+}
+
+.profile-bio {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  margin: 0;
+  padding: 0 8px;
+  line-height: 1.4;
+}
+
+/* ===== Divider ===== */
+.divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 0 16px;
+}
+
+/* ===== Media Section ===== */
+.media-section {
+  flex: 1;
+  padding: 20px 16px;
+}
+
+.section-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: white;
+  margin: 0 0 16px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.media-grid::-webkit-scrollbar {
+  width: 4px;
+}
+
+.media-grid::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.media-grid::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+}
+
+.media-item {
+  aspect-ratio: 1;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.media-item:hover {
+  transform: scale(1.05);
+}
+
+.media-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===== Action Section ===== */
+.action-section {
+  padding: 20px 16px;
+  margin-top: auto;
+}
+
+.logout-button {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #8b5cf6, #6366f1);
+  border: none;
+  border-radius: 25px;
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.4);
+}
+
+.logout-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(139, 92, 246, 0.6);
+}
+
+.logout-button:active {
+  transform: translateY(0);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  .profile-image {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .media-section {
+    padding: 16px 12px;
+  }
+  
+  .action-section {
+    padding: 16px 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .right-sidebar {
+    display: none;
+  }
+}
