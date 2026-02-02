@@ -53,12 +53,12 @@ const Sidebar = () => {
             className="menu-icon" 
             onClick={handleMenuClick}
           />
-
-          <div className={`menu-dropdown ${isDropdownOpen ? 'show' : ''}`}>
-            <p onClick={handleProfileClick}>Edit Profile</p>
-            <hr />
-            <p onClick={handleLogoutClick}>Logout</p>
-          </div>
+<div className={`menu-dropdown ${isDropdownOpen ? 'show' : ''}`}>
+  <p onClick={handleProfileClick}>Edit Profile</p>
+  <hr />
+  <p onClick={handleLogoutClick}>Logout</p>
+</div>
+          
         </div>
       </div>
 

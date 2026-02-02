@@ -8,7 +8,11 @@ import "./App.css";
 import { AuthContext } from './context/AuthContext';
 
 const App = () => {
-  const { authUser } = useContext(AuthContext);
+  const { authUser, isCheckingAuth } = useContext(AuthContext); // You need to add isCheckingAuth to context if not there
+
+  // If you don't have isCheckingAuth, you can skip this part, 
+  // but it's smoother to have a loader.
+  if (authUser === undefined) return <div className="loading">Loading...</div>;
   
   return (
     <div className="app-background">
@@ -18,6 +22,7 @@ const App = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/login" element={<Navigate to="/" />} />
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       ) : (
         <Routes>
